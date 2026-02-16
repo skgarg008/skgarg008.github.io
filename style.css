@@ -1,15 +1,16 @@
-@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Space+Grotesk:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@300;500;700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap");
 
 :root {
-    --ink: #0f172a;
-    --ink-soft: #27334a;
-    --muted: #64748b;
-    --accent: #0f766e;
-    --accent-soft: #ccfbf1;
-    --sand: #f8f4ef;
-    --card: #ffffff;
-    --line: #e2e8f0;
-    --shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+    --ink: #e2e8f0;
+    --ink-soft: #cbd5f5;
+    --muted: #8b9bb8;
+    --accent: #34d3ff;
+    --accent-2: #a78bfa;
+    --accent-soft: rgba(52, 211, 255, 0.15);
+    --card: rgba(15, 23, 42, 0.6);
+    --line: rgba(148, 163, 184, 0.2);
+    --shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
+    --glass: rgba(15, 23, 42, 0.5);
 }
 
 * {
@@ -18,7 +19,11 @@
 
 body {
     font-family: "Space Grotesk", sans-serif;
-    background: radial-gradient(circle at top, #f7f1e8 0%, #f3f4f6 45%, #f8fafc 100%);
+    background:
+        radial-gradient(circle at 20% 10%, rgba(52, 211, 255, 0.2), transparent 35%),
+        radial-gradient(circle at 80% 0%, rgba(167, 139, 250, 0.25), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(56, 189, 248, 0.18), transparent 35%),
+        #05070f;
     color: var(--ink);
     margin: 0;
     padding: 0;
@@ -27,16 +32,43 @@ body {
 .container {
     max-width: 1060px;
     margin: 48px auto 80px;
-    background: var(--card);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.6));
     padding: 48px;
-    border-radius: 24px;
+    border-radius: 28px;
     box-shadow: var(--shadow);
-    border: 1px solid #eef2f7;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    inset: -20% -10% auto;
+    height: 180px;
+    background: linear-gradient(90deg, rgba(52, 211, 255, 0.15), rgba(167, 139, 250, 0.15));
+    filter: blur(30px);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.container::after {
+    content: "";
+    position: absolute;
+    inset: auto -10% -25%;
+    height: 220px;
+    background: linear-gradient(90deg, rgba(14, 165, 233, 0.15), rgba(52, 211, 255, 0.12));
+    filter: blur(40px);
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 header {
     border-bottom: 1px solid var(--line);
     padding-bottom: 28px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero {
@@ -60,6 +92,7 @@ header h1 {
     font-size: 48px;
     margin: 0 0 12px;
     color: var(--ink);
+    text-shadow: 0 0 24px rgba(52, 211, 255, 0.15);
 }
 
 .tagline {
@@ -71,10 +104,15 @@ header h1 {
 }
 
 .contact-card {
-    background: var(--sand);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.4));
     padding: 22px;
     border-radius: 16px;
-    border: 1px solid #efe7db;
+    border: 1px solid var(--line);
+    box-shadow: 0 0 24px rgba(52, 211, 255, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    position: relative;
+    overflow: hidden;
 }
 
 .contact-card p {
@@ -103,10 +141,15 @@ header h1 {
 }
 
 .stats div {
-    background: #f1f5f9;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
     padding: 16px;
     border-radius: 14px;
     text-align: center;
+    border: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
 }
 
 .stats h3 {
@@ -123,6 +166,8 @@ header h1 {
 
 section {
     margin-top: 36px;
+    position: relative;
+    z-index: 1;
 }
 
 section h3 {
@@ -143,10 +188,14 @@ section p {
 }
 
 .skill-card {
-    background: #f8fafc;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
     border-radius: 14px;
     padding: 18px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
 }
 
 .skill-card h4 {
@@ -172,7 +221,12 @@ section p {
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 20px 22px;
-    background: #ffffff;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.06);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: relative;
+    overflow: hidden;
 }
 
 .role-header {
@@ -197,7 +251,7 @@ section p {
 .period {
     font-size: 13px;
     color: var(--ink-soft);
-    background: var(--accent-soft);
+    background: rgba(52, 211, 255, 0.12);
     padding: 6px 12px;
     border-radius: 999px;
     white-space: nowrap;
@@ -217,7 +271,65 @@ ul {
     padding: 18px 22px;
     border-radius: 16px;
     border: 1px solid var(--line);
-    background: #f8fafc;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card::after,
+.stats div::after,
+.skill-card::after,
+.role::after,
+.education::after {
+    content: "";
+    position: absolute;
+    inset: -120% 30% auto -120%;
+    height: 220%;
+    background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.12), transparent 60%);
+    animation: glass-sweep 14s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.stats div::after {
+    animation-duration: 16s;
+}
+
+.skill-card::after {
+    animation-duration: 18s;
+}
+
+.role::after {
+    animation-duration: 20s;
+}
+
+.education::after {
+    animation-duration: 22s;
+}
+
+@keyframes glass-sweep {
+    0% {
+        transform: translateX(-30%);
+        opacity: 0.55;
+    }
+    45% {
+        opacity: 0.9;
+    }
+    100% {
+        transform: translateX(60%);
+        opacity: 0.35;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-card::after,
+    .stats div::after,
+    .skill-card::after,
+    .role::after,
+    .education::after {
+        animation: none;
+    }
 }
 
 .education h4 {
@@ -234,6 +346,8 @@ footer {
     margin-top: 44px;
     font-size: 14px;
     color: var(--muted);
+    position: relative;
+    z-index: 1;
 }
 
 @media (max-width: 900px) {
