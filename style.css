@@ -2,11 +2,11 @@
 
 :root {
     --ink: #e2e8f0;
-    --ink-soft: #cbd5f5;
-    --muted: #8b9bb8;
-    --accent: #34d3ff;
-    --accent-2: #a78bfa;
-    --accent-soft: rgba(52, 211, 255, 0.15);
+    --ink-soft: #d1d5db;
+    --muted: #a1a1aa;
+    --accent: #f59e0b;
+    --accent-2: #fbbf24;
+    --accent-soft: rgba(245, 158, 11, 0.18);
     --card: rgba(15, 23, 42, 0.6);
     --line: rgba(148, 163, 184, 0.2);
     --shadow: 0 30px 80px rgba(2, 6, 23, 0.6);
@@ -20,10 +20,10 @@
 body {
     font-family: "Space Grotesk", sans-serif;
     background:
-        radial-gradient(circle at 20% 10%, rgba(52, 211, 255, 0.2), transparent 35%),
-        radial-gradient(circle at 80% 0%, rgba(167, 139, 250, 0.25), transparent 40%),
-        radial-gradient(circle at 50% 90%, rgba(56, 189, 248, 0.18), transparent 35%),
-        #05070f;
+        radial-gradient(circle at 15% 0%, rgba(245, 158, 11, 0.22), transparent 35%),
+        radial-gradient(circle at 85% 5%, rgba(251, 191, 36, 0.2), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(180, 83, 9, 0.16), transparent 35%),
+        #120f0b;
     color: var(--ink);
     margin: 0;
     padding: 0;
@@ -32,11 +32,11 @@ body {
 .container {
     max-width: 1060px;
     margin: 48px auto 80px;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.6));
+    background: linear-gradient(135deg, rgba(24, 20, 16, 0.92), rgba(18, 14, 10, 0.72));
     padding: 48px;
     border-radius: 28px;
     box-shadow: var(--shadow);
-    border: 1px solid rgba(148, 163, 184, 0.25);
+    border: 1px solid rgba(148, 163, 184, 0.3);
     backdrop-filter: blur(18px);
     position: relative;
     overflow: hidden;
@@ -47,7 +47,7 @@ body {
     position: absolute;
     inset: -20% -10% auto;
     height: 180px;
-    background: linear-gradient(90deg, rgba(52, 211, 255, 0.15), rgba(167, 139, 250, 0.15));
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.2), rgba(251, 191, 36, 0.18));
     filter: blur(30px);
     opacity: 0.8;
     pointer-events: none;
@@ -58,7 +58,7 @@ body {
     position: absolute;
     inset: auto -10% -25%;
     height: 220px;
-    background: linear-gradient(90deg, rgba(14, 165, 233, 0.15), rgba(52, 211, 255, 0.12));
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.18), rgba(251, 191, 36, 0.14));
     filter: blur(40px);
     opacity: 0.7;
     pointer-events: none;
@@ -92,7 +92,7 @@ header h1 {
     font-size: 48px;
     margin: 0 0 12px;
     color: var(--ink);
-    text-shadow: 0 0 24px rgba(52, 211, 255, 0.15);
+    text-shadow: 0 0 24px rgba(245, 158, 11, 0.25);
 }
 
 .tagline {
@@ -104,11 +104,11 @@ header h1 {
 }
 
 .contact-card {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0.4));
+    background: linear-gradient(135deg, rgba(26, 20, 14, 0.78), rgba(18, 14, 10, 0.48));
     padding: 22px;
     border-radius: 16px;
     border: 1px solid var(--line);
-    box-shadow: 0 0 24px rgba(52, 211, 255, 0.08);
+    box-shadow: 0 16px 40px rgba(245, 158, 11, 0.12);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     position: relative;
@@ -141,7 +141,7 @@ header h1 {
 }
 
 .stats div {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
+    background: linear-gradient(135deg, rgba(26, 20, 14, 0.72), rgba(18, 14, 10, 0.4));
     padding: 16px;
     border-radius: 14px;
     text-align: center;
@@ -164,6 +164,25 @@ header h1 {
     font-size: 13px;
 }
 
+.fun-row {
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    color: var(--ink);
+    background: rgba(15, 23, 42, 0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
 section {
     margin-top: 36px;
     position: relative;
@@ -181,6 +200,44 @@ section p {
     line-height: 1.7;
 }
 
+.prompt-card {
+    margin-top: 20px;
+    padding: 18px 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(26, 20, 14, 0.72), rgba(18, 14, 10, 0.4));
+    border: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    position: relative;
+    overflow: hidden;
+}
+
+.prompt-title {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
+.prompt-card p {
+    margin: 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+}
+
+.prompt-card::after {
+    content: "";
+    position: absolute;
+    inset: -120% 30% auto -120%;
+    height: 220%;
+    background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.12), transparent 60%);
+    animation: glass-sweep 18s ease-in-out infinite;
+    pointer-events: none;
+}
+
 .skill-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -188,7 +245,7 @@ section p {
 }
 
 .skill-card {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
+    background: linear-gradient(135deg, rgba(26, 20, 14, 0.72), rgba(18, 14, 10, 0.4));
     border-radius: 14px;
     padding: 18px;
     border: 1px solid var(--line);
@@ -221,8 +278,8 @@ section p {
     border: 1px solid var(--line);
     border-radius: 18px;
     padding: 20px 22px;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
-    box-shadow: 0 0 30px rgba(56, 189, 248, 0.06);
+    background: linear-gradient(135deg, rgba(26, 20, 14, 0.72), rgba(18, 14, 10, 0.4));
+    box-shadow: 0 16px 40px rgba(245, 158, 11, 0.12);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     position: relative;
@@ -251,7 +308,7 @@ section p {
 .period {
     font-size: 13px;
     color: var(--ink-soft);
-    background: rgba(52, 211, 255, 0.12);
+    background: rgba(245, 158, 11, 0.16);
     padding: 6px 12px;
     border-radius: 999px;
     white-space: nowrap;
@@ -271,7 +328,7 @@ ul {
     padding: 18px 22px;
     border-radius: 16px;
     border: 1px solid var(--line);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.35));
+    background: linear-gradient(135deg, rgba(26, 20, 14, 0.72), rgba(18, 14, 10, 0.4));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     position: relative;
